@@ -1,0 +1,873 @@
+/* =========================================
+   EXPLORE PAGE
+   PRATHAM RATISH YADAV
+========================================= */
+
+:root {
+    --bg: #080808;
+    --card: #111111;
+    --card-hover: #151515;
+    --text: #ffffff;
+    --muted: #9b9b9b;
+    --accent: #d8b36a;
+    --border: rgba(255, 255, 255, 0.10);
+    --accent-border: rgba(216, 179, 106, 0.30);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.explore-header {
+    width: 100%;
+
+    padding: 22px 6%;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(8, 8, 8, 0.92);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(15px);
+}
+
+
+.explore-header-inner {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.explore-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+
+.explore-brand img {
+    width: 34px;
+    height: 34px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.explore-back {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+
+.explore-back i {
+    font-size: 0.7rem;
+}
+
+
+.explore-back:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.explore-hero {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 6% 75px;
+
+    text-align: center;
+}
+
+
+.explore-number {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--accent);
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.explore-eyebrow {
+    margin-bottom: 15px;
+
+    color: #777;
+
+    font-size: 0.67rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+.explore-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(3.4rem, 8vw, 7rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 600;
+}
+
+
+.explore-hero h1 span {
+    color: var(--accent);
+}
+
+
+.explore-description {
+    max-width: 570px;
+
+    margin: 28px auto 0;
+
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CARDS SECTION
+========================================= */
+
+.explore-cards-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 6% 90px;
+}
+
+
+.explore-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.explore-card {
+    min-height: 0;
+
+    padding: 0 25px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.explore-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(216, 179, 106, 0.08);
+
+    filter: blur(40px);
+
+    transition: transform 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.explore-card:hover {
+    transform: translateY(-7px);
+
+    background: var(--card-hover);
+
+    border-color: var(--accent-border);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+.explore-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+/* =========================================
+   THUMBNAIL
+========================================= */
+
+.explore-card-image {
+    width: calc(100% + 50px);
+
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    margin-left: -25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #0b0b0b;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.explore-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease;
+}
+
+
+/* Dark cinematic overlay */
+
+.explore-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05) 20%,
+            rgba(0, 0, 0, 0.20) 55%,
+            rgba(0, 0, 0, 0.78) 100%
+        );
+
+    transition:
+        background 0.4s ease;
+}
+
+
+/* Small label on thumbnail */
+
+.explore-image-label {
+    position: absolute;
+
+    left: 16px;
+    bottom: 14px;
+
+    padding: 6px 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: #ffffff;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.57rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* Thumbnail hover */
+
+.explore-card:hover .explore-card-image img {
+    transform: scale(1.06);
+
+    filter: brightness(1.08);
+}
+
+
+.explore-card:hover .explore-image-overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.02) 15%,
+            rgba(0, 0, 0, 0.14) 50%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.explore-card-top {
+    padding-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.explore-card-number {
+    color: #555;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.explore-card-arrow {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    transition: all 0.3s ease;
+}
+
+
+.explore-card:hover .explore-card-arrow {
+    color: var(--accent);
+
+    border-color: var(--accent-border);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.explore-card-content {
+    margin-top: 28px;
+}
+
+
+.explore-card-label {
+    margin-bottom: 9px;
+
+    color: var(--accent);
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.63rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.explore-card h2 {
+    margin-bottom: 13px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 1.55rem;
+
+    line-height: 1.15;
+
+    font-weight: 600;
+}
+
+
+.explore-card-content p {
+    color: var(--muted);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   FOOTER INSIDE CARD
+========================================= */
+
+.explore-card-footer {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: #777;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+
+.explore-card-footer i {
+    transition: transform 0.3s ease;
+}
+
+
+.explore-card:hover .explore-card-footer {
+    color: var(--accent);
+}
+
+
+.explore-card:hover .explore-card-footer i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   BOTTOM CTA
+========================================= */
+
+.explore-cta-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 6% 80px;
+}
+
+
+.explore-cta {
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: #0d0d0d;
+}
+
+
+.explore-cta-label {
+    margin-bottom: 8px;
+
+    color: var(--accent);
+
+    font-size: 0.63rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.explore-cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.25;
+}
+
+
+.explore-cta h2 span {
+    color: var(--muted);
+}
+
+
+.explore-connect {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 145px;
+
+    height: 46px;
+
+    padding: 0 20px;
+
+    border-radius: 50px;
+
+    background: var(--accent);
+
+    color: #080808;
+
+    text-decoration: none;
+
+    font-size: 0.76rem;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+
+.explore-connect:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(216, 179, 106, 0.20);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.explore-footer {
+    border-top: 1px solid var(--border);
+
+    padding: 24px 6%;
+}
+
+
+.explore-footer-inner {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #555;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .explore-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .explore-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .explore-header {
+        padding: 18px 5%;
+    }
+
+
+    .explore-brand span {
+        font-size: 0.67rem;
+    }
+
+
+    .explore-hero {
+        padding: 75px 6% 55px;
+    }
+
+
+    .explore-hero h1 {
+        font-size: 3.6rem;
+
+        letter-spacing: -3px;
+    }
+
+
+    .explore-description {
+        font-size: 0.86rem;
+    }
+
+
+    .explore-cards-section {
+        padding-bottom: 60px;
+    }
+
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .explore-card:last-child {
+        grid-column: auto;
+    }
+
+
+    .explore-card {
+        min-height: 0;
+    }
+
+
+    .explore-card-image {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .explore-card-content {
+        margin-top: 24px;
+    }
+
+
+    .explore-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .explore-connect {
+        width: 100%;
+    }
+
+
+    .explore-footer-inner {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .explore-back {
+        font-size: 0;
+    }
+
+
+    .explore-back i {
+        font-size: 0.8rem;
+    }
+
+
+    .explore-hero h1 {
+        font-size: 3.1rem;
+    }
+
+
+    .explore-card {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .explore-card-image {
+        width: calc(100% + 40px);
+
+        margin-left: -20px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .explore-card,
+    .explore-card-image img,
+    .explore-card-arrow,
+    .explore-card-footer i {
+        transition: none;
+    }
+
+
+    .explore-card:hover {
+        transform: none;
+    }
+
+
+    .explore-card:hover .explore-card-image img {
+        transform: none;
+    }
+
+}

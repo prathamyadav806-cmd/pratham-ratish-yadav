@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pratham Ratish Yadav | Portfolio</title>
+
+    <meta
+        name="description"
+        content="Pratham Ratish Yadav — Mechanical Engineering Student, Creative Designer, Video Editor and Educator.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+<!-- =====================================================
+     CINEMATIC INDEX OPENING
+===================================================== -->
+
+<div id="indexOpening">
+
+    <div class="index-intro-bg"></div>
+
+    <div class="index-intro-light"></div>
+
+    <div class="index-intro-content">
+
+        <div class="index-intro-small">
+            WELCOME TO
+        </div>
+
+        <div class="index-intro-name">
+            PRATHAM RATISH YADAV
+        </div>
+
+        <div class="index-intro-role">
+            MECHANICAL ENGINEERING STUDENT
+            <span>•</span>
+            CREATIVE DESIGNER
+            <span>•</span>
+            EDITOR
+            <span>•</span>
+            TUTOR
+        </div>
+
+        <div class="index-intro-line">
+            <span></span>
+        </div>
+
+        <div class="index-intro-status">
+            PERSONAL PORTFOLIO
+        </div>
+
+    </div>
+
+    <div class="index-intro-corner index-intro-corner-left">
+        PRATHAM RATISH YADAV
+    </div>
+
+    <div class="index-intro-corner index-intro-corner-right">
+        2026
+    </div>
+
+</div>
+
+
+<style>
+
+/* =====================================================
+   CINEMATIC INTRO — SELF CONTAINED
+===================================================== */
+
+#indexOpening {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #050505;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999999999;
+
+    overflow: hidden;
+
+    animation:
+        indexOpeningExit
+        1.2s
+        cubic-bezier(.77,0,.18,1)
+        5.2s
+        forwards;
+
+}
+
+
+/* BACKGROUND */
+
+.index-intro-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(216,181,106,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,.035),
+            transparent 65%
+        );
+
+    animation: introBackground 5.5s ease forwards;
+
+}
+
+
+/* LIGHT SWEEP */
+
+.index-intro-light {
+
+    position: absolute;
+
+    top: -20%;
+
+    left: -30%;
+
+    width: 35%;
+
+    height: 140%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(216,181,106,.16),
+        transparent
+    );
+
+    filter: blur(25px);
+
+    transform: skewX(-18deg);
+
+    animation: introLightSweep 4s cubic-bezier(.65,0,.35,1) forwards;
+
+}
+
+
+/* CENTER CONTENT */
+
+.index-intro-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* SMALL TEXT */
+
+.index-intro-small {
+
+    color: #d8b56a;
+
+    font-family: Inter, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .55em;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        introSmall
+        .8s
+        .2s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+/* NAME */
+
+.index-intro-name {
+
+    margin-top: 24px;
+
+    color: #f5f2eb;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(34px, 6vw, 82px);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: -.055em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        scale(.96);
+
+    filter: blur(12px);
+
+    animation:
+        introName
+        1.2s
+        .65s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+/* ROLE */
+
+.index-intro-role {
+
+    margin-top: 28px;
+
+    max-width: 900px;
+
+    color: rgba(245,242,235,.55);
+
+    font-family: Inter, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .24em;
+
+    line-height: 2;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation:
+        introRole
+        1s
+        1.4s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+.index-intro-role span {
+
+    color: #d8b56a;
+
+    margin: 0 7px;
+
+}
+
+
+/* LINE */
+
+.index-intro-line {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 1px;
+
+    margin-top: 34px;
+
+    background: rgba(216,181,106,.18);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    animation:
+        introLine
+        .8s
+        1.9s
+        ease
+        forwards;
+
+}
+
+
+.index-intro-line span {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 100%;
+
+    background: #d8b56a;
+
+    box-shadow:
+        0 0 12px #d8b56a,
+        0 0 35px rgba(216,181,106,.7);
+
+    animation:
+        introLineGrow
+        1.4s
+        2s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+/* STATUS */
+
+.index-intro-status {
+
+    margin-top: 20px;
+
+    color: rgba(245,242,235,.25);
+
+    font-family: Inter, sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: .4em;
+
+    opacity: 0;
+
+    animation:
+        introStatus
+        .8s
+        2.4s
+        ease
+        forwards;
+
+}
+
+
+/* CORNERS */
+
+.index-intro-corner {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    color: rgba(245,242,235,.25);
+
+    font-family: Inter, sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: .25em;
+
+    opacity: 0;
+
+    animation:
+        introCorners
+        1s
+        1.8s
+        ease
+        forwards;
+
+}
+
+
+.index-intro-corner-left {
+
+    left: 35px;
+
+}
+
+
+.index-intro-corner-right {
+
+    right: 35px;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes introSmall {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes introName {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            scale(.96);
+
+        filter: blur(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+
+    }
+
+}
+
+
+@keyframes introRole {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes introLine {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes introLineGrow {
+
+    from {
+
+        width: 0;
+
+    }
+
+    to {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@keyframes introStatus {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes introCorners {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes introLightSweep {
+
+    from {
+
+        transform:
+            translateX(-100vw)
+            skewX(-18deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(380vw)
+            skewX(-18deg);
+
+    }
+
+}
+
+
+@keyframes introBackground {
+
+    0% {
+
+        transform: scale(.9);
+
+        opacity: .4;
+
+    }
+
+    100% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* EXIT */
+
+@keyframes indexOpeningExit {
+
+    0%,
+    78% {
+
+        opacity: 1;
+
+        visibility: visible;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .index-intro-small {
+
+        font-size: 8px;
+
+        letter-spacing: .4em;
+
+    }
+
+
+    .index-intro-name {
+
+        font-size: 31px;
+
+        white-space: normal;
+
+        width: 90vw;
+
+    }
+
+
+    .index-intro-role {
+
+        width: 85vw;
+
+        font-size: 7px;
+
+        line-height: 2.2;
+
+        letter-spacing: .16em;
+
+    }
+
+
+    .index-intro-line {
+
+        width: 190px;
+
+    }
+
+
+    .index-intro-corner {
+
+        bottom: 22px;
+
+        font-size: 6px;
+
+    }
+
+
+    .index-intro-corner-left {
+
+        left: 18px;
+
+    }
+
+
+    .index-intro-corner-right {
+
+        right: 18px;
+
+    }
+
+}
+
+</style>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#home" class="logo">
+
+                <img
+                    src="images/profile.jpg"
+                    alt="Pratham Ratish Yadav">
+
+                <span>
+                    PRATHAM RATISH YADAV
+                </span>
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="journey.html">
+                        Journey
+                    </a>
+                </li>
+
+                <li>
+                    <a href="skills.html">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <a href="gallery.html">Gallery</a>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HOME / HERO
+        ====================================================== -->
+
+        <section
+            id="home"
+            class="hero-section">
+
+
+            <!-- HERO CANDID IMAGE -->
+
+            <div class="hero-candid-image">
+
+                <img
+                    src="images/hero-candid.jpg"
+                    alt="Pratham Ratish Yadav"
+                    aria-hidden="true">
+
+            </div>
+
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <p class="hero-greeting">
+                    Hi, I'm
+                </p>
+
+
+                <h1>
+                    Pratham Ratish Yadav
+                </h1>
+
+
+                <p class="hero-description">
+                    Mechanical Engineering Student • Creative Designer • Video Editor • Tutor
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="explore.html"
+                        class="btn btn-primary">
+
+                        Explore My Journey
+
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-secondary">
+
+                        Let's Connect
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT / MY LIFE AS A STUDENT
+        ====================================================== -->
+
+        <section
+            id="about"
+            class="about-section">
+
+
+            <div class="section-container">
+
+
+                <!-- SECTION HEADING -->
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                    <h2>
+                        MY LIFE AS A STUDENT
+                    </h2>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ABOUT GRID
+                ================================================== -->
+
+                <div class="about-grid">
+
+
+                    <!-- =================================================
+                         LEFT COLUMN
+                    ================================================== -->
+
+                    <div class="about-content">
+
+
+                        <!-- ABOUT SUMMARY -->
+
+                        <p class="about-intro">
+
+                            I'm
+                            <strong>Pratham Ratish Yadav</strong>,
+                            currently pursuing my second year of Mechanical
+                            Engineering at
+                            <strong>
+                                N.Y.S.S. Datta Meghe College of Engineering,
+                                Airoli
+                            </strong>,
+                            under the University of Mumbai.
+
+                        </p>
+
+
+                        <p>
+
+                            I completed my schooling at
+                            <strong>
+                                P.V.G.'S Vidya Bhawan High School & Junior College
+                            </strong>,
+                            followed by my studies at
+                            <strong>
+                                Achievers Technical Academy
+                            </strong>.
+
+                        </p>
+
+
+                        <p>
+
+                            Alongside my studies, I have
+                            <strong>
+                                one year of experience as an Educator
+                            </strong>
+                            at
+                            <strong>
+                                Gurukul Home Tuition
+                            </strong>,
+                            where I have developed communication,
+                            responsibility and practical problem-solving skills.
+
+                        </p>
+
+
+                        <p>
+
+                            I started
+                            <strong>Pratuuu Editz</strong>
+                            as my own creative space, where I explore
+                            <strong>
+                                AI design, graphic design and video editing
+                            </strong>.
+
+                        </p>
+
+
+
+                        <!-- =================================================
+                             WHAT I DO
+                        ================================================== -->
+
+                        <div class="what-i-do-section">
+
+
+                            <div class="what-i-do-heading">
+
+                                <span class="what-i-do-label">
+                                    WHAT I DO
+                                </span>
+
+
+                                <p>
+                                    The things I explore, create and work on
+                                    alongside my engineering journey.
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="what-i-do-grid">
+
+
+                                <!-- 01 — TEACHING -->
+
+                                <div class="what-i-do-card">
+
+                                    <div class="what-i-do-top">
+
+                                        <span class="what-i-do-number">
+                                            01
+                                        </span>
+
+                                        <span class="what-i-do-icon">
+                                            <i class="fa-solid fa-book-open"></i>
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Teaching
+                                    </h3>
+
+
+                                    <p>
+                                        Sharing knowledge, helping students
+                                        learn concepts clearly and building
+                                        better communication through teaching.
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- 02 — AI EXPLORATION -->
+
+                                <div class="what-i-do-card">
+
+                                    <div class="what-i-do-top">
+
+                                        <span class="what-i-do-number">
+                                            02
+                                        </span>
+
+                                        <span class="what-i-do-icon">
+                                            <i class="fa-solid fa-robot"></i>
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        AI Exploration
+                                    </h3>
+
+
+                                    <p>
+                                        Exploring AI tools, creative workflows
+                                        and new possibilities to turn ideas
+                                        into useful visual concepts.
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- 03 — VIDEO EDITING -->
+
+                                <div class="what-i-do-card">
+
+                                    <div class="what-i-do-top">
+
+                                        <span class="what-i-do-number">
+                                            03
+                                        </span>
+
+                                        <span class="what-i-do-icon">
+                                            <i class="fa-solid fa-film"></i>
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Video Editing
+                                    </h3>
+
+
+                                    <p>
+                                        Creating short reels and cinematic
+                                        edits with a focus on timing,
+                                        storytelling and visual presentation.
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- 04 — AI & GRAPHIC DESIGN -->
+
+                                <div class="what-i-do-card">
+
+                                    <div class="what-i-do-top">
+
+                                        <span class="what-i-do-number">
+                                            04
+                                        </span>
+
+                                        <span class="what-i-do-icon">
+                                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        AI & Graphic Design
+                                    </h3>
+
+
+                                    <p>
+                                        Designing AI images, posters,
+                                        thumbnails, invitation cards and
+                                        other creative visual content.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             PRATUUU EDITZ — CREATIVE SPACE
+                        ================================================== -->
+
+                        <div class="pratuuu-brand-strip">
+
+
+                            <div class="pratuuu-brand-content">
+
+                                <span class="pratuuu-label">
+                                    MY CREATIVE SPACE
+                                </span>
+
+
+                                <h3 class="pratuuu-name">
+
+                                    <span>
+                                        PRATUUU
+                                    </span>
+
+                                    <span class="editz">
+                                        EDITZ
+                                    </span>
+
+                                </h3>
+
+
+                                <p>
+                                    AI Design • Graphic Design • Video Editing
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- LOGO SHOWCASE -->
+
+                            <div class="pratuuu-logo-showcase">
+
+                                <div class="pratuuu-logo-frame">
+
+                                    <img
+                                        src="images/pratuuu-logo.png"
+                                        alt="Pratuuu Editz Logo">
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         RIGHT COLUMN
+                    ================================================== -->
+
+                    <div class="about-side">
+
+
+                        <!-- ABOUT IMAGE -->
+
+                        <div class="about-candid-card">
+
+                            <img
+                                src="images/about-candid.jpg"
+                                alt="Pratham Ratish Yadav">
+
+                            <div class="about-candid-overlay">
+
+                                <span>
+                                    BEHIND THE WORK
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- QUALITIES -->
+
+                        <div class="qualities-card">
+
+                            <div class="qualities-header">
+
+                                <span>
+                                    MY QUALITIES
+                                </span>
+
+                                <span class="qualities-dot">
+                                    ●
+                                </span>
+
+                            </div>
+
+
+                            <div class="qualities-list">
+
+
+                                <div class="quality-item">
+
+                                    <span>
+                                        01
+                                    </span>
+
+                                    <strong>
+                                        Creative
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="quality-item">
+
+                                    <span>
+                                        02
+                                    </span>
+
+                                    <strong>
+                                        Problem Solver
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="quality-item">
+
+                                    <span>
+                                        03
+                                    </span>
+
+                                    <strong>
+                                        Practical
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="quality-item">
+
+                                    <span>
+                                        04
+                                    </span>
+
+                                    <strong>
+                                        Innovative
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="quality-item">
+
+                                    <span>
+                                        05
+                                    </span>
+
+                                    <strong>
+                                        Self-Motivated
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                
+
+
+
+                <!-- =================================================
+                     EXPLORE MORE
+                ================================================== -->
+
+                <div class="explore-more-section">
+
+                    <div class="explore-more-content">
+
+                        <span class="explore-more-label">
+                            EXPLORE MORE
+                        </span>
+
+
+                        <h3>
+                            More of my journey, skills & work.
+                        </h3>
+
+
+                        <p>
+                            Explore the experiences, skills and projects
+                            behind my portfolio.
+                        </p>
+
+
+                        <a
+                            href="./explore.html"
+                            class="explore-more-btn">
+
+                            <span>
+                                Explore More
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <!-- CREATIVE ARCHIVE -->
+
+                        <a
+                            href="gallery.html"
+                            class="creative-archive-btn">
+
+                            <span>
+                                Creative Archive
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CONTACT CTA
+                ================================================== -->
+
+                <div class="home-contact-cta">
+
+
+                    <div class="home-contact-content">
+
+                        <span class="home-contact-label">
+                            LET'S CONNECT
+                        </span>
+
+
+                        <h3>
+                            Have an idea, project or opportunity?
+                        </h3>
+
+
+                        <p>
+                            Let's connect and create something meaningful.
+                        </p>
+
+                    </div>
+
+
+
+                    <a
+                        href="contact.html"
+                        class="home-contact-btn">
+
+                        <span>
+                            Contact Me
+                        </span>
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>
+                © 2026 Pratham Ratish Yadav
+            </p>
+
+            <p>
+                Designed & Built with purpose.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

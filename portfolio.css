@@ -1,0 +1,2541 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --bg: #090909;
+    --bg-soft: #101010;
+
+    --text: #f4f1ea;
+    --text-muted: rgba(244, 241, 234, 0.52);
+
+    --accent: #d8b56a;
+    --accent-soft: rgba(216, 181, 106, 0.14);
+    --accent-border: rgba(216, 181, 106, 0.28);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.portfolio-page {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 5vw 24px;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.portfolio-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    top: -300px;
+    right: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216, 181, 106, 0.055),
+            transparent 68%
+        );
+
+    filter: blur(60px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+.portfolio-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    bottom: -300px;
+    left: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216, 181, 106, 0.035),
+            transparent 68%
+        );
+
+    filter: blur(70px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   CINEMATIC OPENING
+========================================================= */
+
+.portfolio-opening {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    background: #070707;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    animation:
+        cinematicCurtain
+        2.4s
+        cubic-bezier(0.76, 0, 0.24, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   GOLD LIGHT SWEEP
+========================================================= */
+
+.portfolio-opening::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -35%;
+
+    width: 30%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(216, 181, 106, 0.03) 30%,
+            rgba(216, 181, 106, 0.18) 50%,
+            rgba(216, 181, 106, 0.03) 70%,
+            transparent 100%
+        );
+
+    filter: blur(25px);
+
+    transform: skewX(-12deg);
+
+    animation:
+        lightSweep
+        1.7s
+        0.25s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   CENTER GOLD LINE
+========================================================= */
+
+.opening-line {
+    position: relative;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 8px rgba(216, 181, 106, 0.7),
+        0 0 30px rgba(216, 181, 106, 0.35),
+        0 0 70px rgba(216, 181, 106, 0.15);
+
+    animation:
+        openingLine
+        1.25s
+        0.15s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.portfolio-top {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 22px;
+
+    border-bottom:
+        1px solid rgba(244, 241, 234, 0.08);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    color: rgba(244, 241, 234, 0.48);
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    animation:
+        headerCinematic
+        1.1s
+        1.45s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   PROFILE BRAND
+========================================================= */
+
+.portfolio-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.portfolio-brand:hover {
+    opacity: 0.82;
+}
+
+
+.portfolio-profile {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    display: block;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(216, 181, 106, 0.5);
+
+    background: var(--bg-soft);
+
+    box-shadow:
+        0 0 0 4px rgba(216, 181, 106, 0.035);
+
+    transform: scale(0.65);
+
+    opacity: 0;
+
+    animation:
+        profileReveal
+        0.9s
+        1.6s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.portfolio-profile img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.portfolio-brand:hover .portfolio-profile {
+    transform: scale(1.07);
+
+    border-color:
+        rgba(216, 181, 106, 0.85);
+}
+
+
+.portfolio-name {
+    color: var(--text);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.portfolio-type {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN LANDING
+========================================================= */
+
+.portfolio-landing {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 7vw;
+
+    max-width: 1450px;
+
+    width: 100%;
+
+    margin: auto;
+
+    padding: 55px 0;
+}
+
+
+/* =========================================================
+   CONTENT CINEMATIC REVEAL
+========================================================= */
+
+.portfolio-content {
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        scale(0.96);
+
+    filter: blur(8px);
+
+    animation:
+        contentCinematic
+        1.35s
+        1.25s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+.portfolio-label {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: var(--accent);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        smallTextReveal
+        0.9s
+        1.65s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+.portfolio-content h1 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size:
+        clamp(
+            62px,
+            8vw,
+            125px
+        );
+
+    line-height: 0.86;
+
+    font-weight: 600;
+
+    letter-spacing: -0.065em;
+
+    color: var(--text);
+}
+
+
+.portfolio-content h1 span {
+    display: block;
+
+    color:
+        rgba(244, 241, 234, 0.36);
+}
+
+
+.portfolio-description {
+    max-width: 440px;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--text-muted);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        descriptionReveal
+        0.9s
+        1.9s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.portfolio-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 45px;
+
+    min-width: 205px;
+
+    margin-top: 35px;
+
+    padding: 15px 20px;
+
+    border:
+        1px solid var(--accent-border);
+
+    border-radius: 999px;
+
+    background:
+        rgba(216, 181, 106, 0.055);
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        buttonReveal
+        0.9s
+        2.05s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.portfolio-btn-arrow {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.35s
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.portfolio-btn:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(216, 181, 106, 0.11);
+
+    border-color:
+        rgba(216, 181, 106, 0.62);
+
+    box-shadow:
+        0 18px 45px
+        rgba(216, 181, 106, 0.08);
+}
+
+
+.portfolio-btn:hover .portfolio-btn-arrow {
+    transform:
+        translate(5px, -5px);
+}
+
+
+/* =========================================================
+   IMAGE CINEMATIC REVEAL
+========================================================= */
+
+.portfolio-image-wrapper {
+    position: relative;
+
+    opacity: 0;
+
+    transform:
+        translateX(90px)
+        scale(0.92);
+
+    filter: blur(10px);
+
+    animation:
+        imageCinematic
+        1.5s
+        1.15s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+.portfolio-image {
+    position: relative;
+
+    width: 100%;
+
+    height:
+        min(
+            68vh,
+            650px
+        );
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    border:
+        1px solid var(--accent-border);
+
+    background: var(--bg-soft);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+.portfolio-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 5, 5, 0.62),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.08);
+
+    animation:
+        imageZoomSettle
+        2.2s
+        1.1s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+    transition:
+        transform 1s
+        cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.7s ease;
+}
+
+
+.portfolio-image:hover img {
+    transform: scale(1.025);
+
+    filter: brightness(0.96);
+}
+
+
+/* =========================================================
+   IMAGE INFO
+========================================================= */
+
+.portfolio-image-info {
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+
+    bottom: 20px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation:
+        imageInfoReveal
+        0.8s
+        2.15s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+.portfolio-image-info span {
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    color:
+        rgba(244, 241, 234, 0.68);
+
+    white-space: nowrap;
+}
+
+
+.portfolio-image-info span:first-child {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.portfolio-bottom {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(244, 241, 234, 0.08);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+
+    color:
+        rgba(244, 241, 234, 0.35);
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation:
+        footerReveal
+        0.8s
+        2.25s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes cinematicCurtain {
+
+    0% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+    }
+
+    55% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+    }
+
+    100% {
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0 0 100% 0
+            );
+    }
+}
+
+
+@keyframes lightSweep {
+
+    0% {
+        left: -35%;
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 115%;
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes openingLine {
+
+    0% {
+        width: 0;
+
+        opacity: 0;
+    }
+
+    20% {
+        width: 80px;
+
+        opacity: 1;
+    }
+
+    55% {
+        width: 260px;
+
+        opacity: 1;
+    }
+
+    80% {
+        width: 140px;
+
+        opacity: 0.8;
+    }
+
+    100% {
+        width: 0;
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes headerCinematic {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes profileReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.65);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes contentCinematic {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(70px)
+            scale(0.96);
+
+        filter: blur(8px);
+    }
+
+    65% {
+        opacity: 1;
+
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes smallTextReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes descriptionReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes imageCinematic {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(90px)
+            scale(0.92);
+
+        filter: blur(10px);
+    }
+
+    60% {
+        opacity: 1;
+
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes imageZoomSettle {
+
+    from {
+        transform:
+            scale(1.08);
+    }
+
+    to {
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes imageInfoReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes footerReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .portfolio-page {
+        padding:
+            24px
+            4vw
+            20px;
+    }
+
+
+    .portfolio-landing {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding:
+            55px
+            0;
+    }
+
+
+    .portfolio-content {
+        max-width: 700px;
+    }
+
+
+    .portfolio-content h1 {
+        font-size:
+            clamp(
+                60px,
+                12vw,
+                100px
+            );
+    }
+
+
+    .portfolio-image {
+        height: 500px;
+
+        min-height: 400px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .portfolio-page {
+        min-height: 100svh;
+
+        padding:
+            18px
+            16px
+            18px;
+    }
+
+
+    /* HEADER */
+
+    .portfolio-top {
+        padding-bottom: 16px;
+
+        font-size: 7px;
+
+        letter-spacing: 0.10em;
+    }
+
+
+    .portfolio-brand {
+        gap: 8px;
+
+        min-width: 0;
+    }
+
+
+    .portfolio-profile {
+        width: 29px;
+        height: 29px;
+
+        flex-basis: 29px;
+    }
+
+
+    .portfolio-name {
+        max-width:
+            calc(
+                100vw - 125px
+            );
+
+        font-size: 7px;
+
+        letter-spacing: 0.09em;
+    }
+
+
+    .portfolio-type {
+        font-size: 6.5px;
+
+        letter-spacing: 0.10em;
+    }
+
+
+    /* MAIN */
+
+    .portfolio-landing {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 34px;
+
+        padding:
+            42px
+            0
+            34px;
+    }
+
+
+    /* CONTENT */
+
+    .portfolio-content {
+        width: 100%;
+    }
+
+
+    .portfolio-label {
+        margin-bottom: 17px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.18em;
+    }
+
+
+    .portfolio-content h1 {
+        font-size:
+            clamp(
+                52px,
+                15vw,
+                68px
+            );
+
+        line-height: 0.88;
+
+        letter-spacing: -0.06em;
+    }
+
+
+    .portfolio-description {
+        max-width: 340px;
+
+        margin-top: 22px;
+
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+
+    /* BUTTON */
+
+    .portfolio-btn {
+        min-width: 185px;
+
+        width: fit-content;
+
+        gap: 30px;
+
+        margin-top: 28px;
+
+        padding:
+            14px
+            17px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.11em;
+
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+
+
+    .portfolio-btn:active {
+        transform:
+            scale(0.97);
+    }
+
+
+    /* IMAGE */
+
+    .portfolio-image-wrapper {
+        width: 100%;
+    }
+
+
+    .portfolio-image {
+        width: 100%;
+
+        height:
+            min(
+                112vw,
+                430px
+            );
+
+        min-height: 320px;
+
+        border-radius: 20px;
+    }
+
+
+    .portfolio-image img {
+        object-position:
+            center center;
+    }
+
+
+    /* IMAGE INFO */
+
+    .portfolio-image-info {
+        left: 17px;
+
+        right: 17px;
+
+        bottom: 16px;
+
+        gap: 8px;
+    }
+
+
+    .portfolio-image-info span {
+        font-size: 6px;
+
+        letter-spacing: 0.10em;
+    }
+
+
+    /* FOOTER */
+
+    .portfolio-bottom {
+        padding-top: 16px;
+
+        font-size: 6px;
+
+        letter-spacing: 0.09em;
+
+        gap: 12px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .portfolio-page {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+
+    .portfolio-top {
+        font-size: 6px;
+    }
+
+
+    .portfolio-profile {
+        width: 27px;
+        height: 27px;
+
+        flex-basis: 27px;
+    }
+
+
+    .portfolio-name {
+        max-width:
+            calc(
+                100vw - 112px
+            );
+
+        font-size: 6px;
+    }
+
+
+    .portfolio-type {
+        font-size: 6px;
+    }
+
+
+    .portfolio-content h1 {
+        font-size: 50px;
+    }
+
+
+    .portfolio-description {
+        font-size: 11px;
+    }
+
+
+    .portfolio-image {
+        min-height: 290px;
+    }
+
+
+    .portfolio-image-info span {
+        font-size: 5px;
+    }
+
+
+    .portfolio-bottom {
+        font-size: 5px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .portfolio-page {
+        min-height: 100svh;
+    }
+
+
+    .portfolio-landing {
+        display: grid;
+
+        grid-template-columns:
+            0.9fr 1.1fr;
+
+        align-items: center;
+
+        gap: 5vw;
+
+        padding:
+            35px
+            0;
+    }
+
+
+    .portfolio-content h1 {
+        font-size:
+            clamp(
+                48px,
+                8vw,
+                75px
+            );
+    }
+
+
+    .portfolio-image {
+        height: 65vh;
+
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-opening,
+    .opening-line,
+    .portfolio-top,
+    .portfolio-profile,
+    .portfolio-content,
+    .portfolio-label,
+    .portfolio-description,
+    .portfolio-btn,
+    .portfolio-image-wrapper,
+    .portfolio-image img,
+    .portfolio-image-info,
+    .portfolio-bottom {
+        animation: none !important;
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        filter: none !important;
+    }
+
+
+    .portfolio-opening {
+        display: none;
+    }
+}
+/* =========================================================
+   5 SECOND CINEMATIC OPENING
+========================================================= */
+
+.portfolio-opening {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #050505;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    animation:
+        openingExit
+        5.8s
+        cubic-bezier(0.76, 0, 0.24, 1)
+        forwards;
+}
+
+
+/* Ambient glow */
+
+.portfolio-opening::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216, 181, 106, 0.12),
+            rgba(216, 181, 106, 0.035) 35%,
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    opacity: 0;
+
+    animation:
+        openingGlow
+        5s
+        ease-in-out
+        forwards;
+}
+
+
+/* Moving cinematic light */
+
+.portfolio-opening::after {
+    content: "";
+
+    position: absolute;
+
+    top: -20%;
+    left: -80%;
+
+    width: 45%;
+    height: 140%;
+
+    transform: rotate(15deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216, 181, 106, 0.025),
+            rgba(216, 181, 106, 0.20),
+            rgba(216, 181, 106, 0.025),
+            transparent
+        );
+
+    filter: blur(18px);
+
+    animation:
+        cinematicLight
+        4.8s
+        0.3s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   OPENING CONTENT
+========================================================= */
+
+.opening-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* Small name */
+
+.opening-small {
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.45em;
+
+    color: rgba(244, 241, 234, 0.55);
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation:
+        openingName
+        1.1s
+        0.65s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* Main PORTFOLIO */
+
+.opening-title {
+    margin-top: 18px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(48px, 8vw, 105px);
+
+    font-weight: 600;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+
+    color: #f4f1ea;
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        scale(0.92);
+
+    filter: blur(10px);
+
+    animation:
+        openingTitle
+        1.35s
+        1.15s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* Gold line */
+
+.opening-line {
+    width: 0;
+
+    height: 1px;
+
+    margin-top: 28px;
+
+    background: #d8b56a;
+
+    box-shadow:
+        0 0 8px rgba(216, 181, 106, 0.9),
+        0 0 30px rgba(216, 181, 106, 0.45),
+        0 0 70px rgba(216, 181, 106, 0.18);
+
+    animation:
+        openingLine
+        1.5s
+        1.65s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   OPENING KEYFRAMES
+========================================================= */
+
+@keyframes openingGlow {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    25% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    65% {
+        opacity: 0.7;
+
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(1.4);
+    }
+}
+
+
+@keyframes cinematicLight {
+
+    0% {
+        left: -80%;
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        left: 145%;
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes openingName {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        letter-spacing: 0.7em;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        letter-spacing: 0.45em;
+    }
+}
+
+
+@keyframes openingTitle {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            scale(0.92);
+
+        filter: blur(10px);
+    }
+
+    60% {
+        opacity: 1;
+
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes openingLine {
+
+    0% {
+        width: 0;
+
+        opacity: 0;
+    }
+
+    25% {
+        width: 80px;
+
+        opacity: 1;
+    }
+
+    65% {
+        width: 280px;
+
+        opacity: 1;
+    }
+
+    100% {
+        width: 160px;
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   FINAL EXIT
+========================================================= */
+
+@keyframes openingExit {
+
+    0% {
+        opacity: 1;
+
+        clip-path:
+            inset(0 0 0 0);
+    }
+
+    72% {
+        opacity: 1;
+
+        clip-path:
+            inset(0 0 0 0);
+    }
+
+    87% {
+        opacity: 1;
+
+        clip-path:
+            inset(0 0 48% 0);
+    }
+
+    100% {
+        opacity: 0;
+
+        clip-path:
+            inset(0 0 100% 0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .opening-small {
+        font-size: 7px;
+
+        letter-spacing: 0.35em;
+    }
+
+    .opening-title {
+        font-size: 50px;
+
+        margin-top: 15px;
+    }
+
+    .opening-line {
+        margin-top: 22px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-opening {
+        display: none;
+    }
+}
+/* =========================================================
+   FINAL CINEMATIC OPENING — PC FIX
+   6 SECOND VISIBLE INTRO
+========================================================= */
+
+.portfolio-opening {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: #050505 !important;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    opacity: 1 !important;
+
+    animation: portfolioIntroExit 6s ease forwards !important;
+}
+
+
+/* =========================================================
+   BACKGROUND AMBIENT GLOW
+========================================================= */
+
+.portfolio-opening .opening-bg {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(216, 181, 106, 0.16) 0%,
+            rgba(216, 181, 106, 0.055) 22%,
+            rgba(5, 5, 5, 0) 55%
+        );
+
+    opacity: 0;
+
+    animation:
+        introGlow
+        5.2s
+        ease-in-out
+        0.2s
+        forwards;
+}
+
+
+/* =========================================================
+   CINEMATIC GOLD LIGHT
+========================================================= */
+
+.portfolio-opening::before {
+    content: "";
+
+    position: absolute;
+
+    top: -20%;
+    left: -40%;
+
+    width: 28%;
+    height: 140%;
+
+    transform: rotate(15deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216, 181, 106, 0.04),
+            rgba(216, 181, 106, 0.28),
+            rgba(216, 181, 106, 0.04),
+            transparent
+        );
+
+    filter: blur(18px);
+
+    opacity: 0;
+
+    animation:
+        introLightSweep
+        4.8s
+        0.4s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   SECONDARY LIGHT
+========================================================= */
+
+.portfolio-opening::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    left: 0;
+    top: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216, 181, 106, 0.25),
+            transparent
+        );
+
+    opacity: 0;
+
+    animation:
+        centerLight
+        3.5s
+        1.1s
+        ease
+        forwards;
+}
+
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.opening-center {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   SMALL TOP TEXT
+========================================================= */
+
+.opening-overline {
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.42em;
+
+    color:
+        rgba(244, 241, 234, 0.48);
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    animation:
+        introOverline
+        1s
+        0.65s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.opening-name {
+    margin-top: 22px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size:
+        clamp(
+            11px,
+            1.2vw,
+            15px
+        );
+
+    font-weight: 600;
+
+    letter-spacing: 0.38em;
+
+    color:
+        rgba(244, 241, 234, 0.78);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.96);
+
+    filter: blur(8px);
+
+    animation:
+        introName
+        1.15s
+        0.95s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   MAIN PORTFOLIO TITLE
+========================================================= */
+
+.opening-title {
+    margin-top: 20px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size:
+        clamp(
+            55px,
+            10vw,
+            135px
+        );
+
+    font-weight: 600;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.065em;
+
+    color: #f4f1ea;
+
+    opacity: 0;
+
+    transform:
+        translateY(65px)
+        scale(0.86);
+
+    filter: blur(16px);
+
+    text-shadow:
+        0 0 45px
+        rgba(244, 241, 234, 0.06);
+
+    animation:
+        introTitle
+        1.45s
+        1.25s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   GOLD LINE
+========================================================= */
+
+.portfolio-opening .opening-line {
+    position: relative;
+
+    width: 0;
+    height: 1px;
+
+    margin-top: 32px;
+
+    background: #d8b56a;
+
+    box-shadow:
+        0 0 8px
+        rgba(216, 181, 106, 0.95),
+
+        0 0 25px
+        rgba(216, 181, 106, 0.55),
+
+        0 0 60px
+        rgba(216, 181, 106, 0.25);
+
+    opacity: 0;
+
+    animation:
+        introLine
+        1.5s
+        1.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   CORNER INFORMATION
+========================================================= */
+
+.opening-corner {
+    position: absolute;
+
+    bottom: 28px;
+
+    z-index: 10;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+
+    color:
+        rgba(244, 241, 234, 0.28);
+
+    opacity: 0;
+
+    animation:
+        introCorners
+        0.9s
+        2.3s
+        ease
+        forwards;
+}
+
+.opening-corner-left {
+    left: 35px;
+}
+
+.opening-corner-right {
+    right: 35px;
+}
+
+
+/* =========================================================
+   GLOW ANIMATION
+========================================================= */
+
+@keyframes introGlow {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    55% {
+        opacity: 0.65;
+        transform: scale(1.15);
+    }
+
+    80% {
+        opacity: 0.35;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.45);
+    }
+}
+
+
+/* =========================================================
+   LIGHT SWEEP
+========================================================= */
+
+@keyframes introLightSweep {
+
+    0% {
+        left: -40%;
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0.85;
+    }
+
+    100% {
+        left: 145%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CENTER LIGHT
+========================================================= */
+
+@keyframes centerLight {
+
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    35% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+
+    75% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(1.3);
+    }
+}
+
+
+/* =========================================================
+   OVERLINE
+========================================================= */
+
+@keyframes introOverline {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        letter-spacing: 0.7em;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.42em;
+    }
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+@keyframes introName {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.96);
+
+        filter: blur(8px);
+    }
+
+    60% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+@keyframes introTitle {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(65px)
+            scale(0.86);
+
+        filter: blur(16px);
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    75% {
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   LINE
+========================================================= */
+
+@keyframes introLine {
+
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    25% {
+        width: 90px;
+        opacity: 1;
+    }
+
+    55% {
+        width: 300px;
+        opacity: 1;
+    }
+
+    80% {
+        width: 180px;
+        opacity: 0.8;
+    }
+
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CORNERS
+========================================================= */
+
+@keyframes introCorners {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FINAL 6 SECOND EXIT
+========================================================= */
+
+@keyframes portfolioIntroExit {
+
+    0% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    72% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    84% {
+        opacity: 1;
+        clip-path: inset(0 0 8% 0);
+    }
+
+    94% {
+        opacity: 1;
+        clip-path: inset(0 0 65% 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+        visibility: hidden;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .opening-overline {
+        font-size: 7px;
+        letter-spacing: 0.28em;
+    }
+
+    .opening-name {
+        margin-top: 18px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.25em;
+    }
+
+    .opening-title {
+        margin-top: 16px;
+
+        font-size: 52px;
+    }
+
+    .portfolio-opening .opening-line {
+        margin-top: 23px;
+    }
+
+    .opening-corner {
+        bottom: 20px;
+
+        font-size: 5px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .opening-corner-left {
+        left: 18px;
+    }
+
+    .opening-corner-right {
+        right: 18px;
+    }
+}
+
+
+/* =========================================================
+   IMPORTANT — DO NOT HIDE INTRO ON PC
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-opening {
+        display: flex !important;
+        animation: portfolioIntroExit 6s ease forwards !important;
+    }
+
+    .opening-overline,
+    .opening-name,
+    .opening-title,
+    .portfolio-opening .opening-line,
+    .opening-corner {
+        animation-play-state: running !important;
+    }
+}

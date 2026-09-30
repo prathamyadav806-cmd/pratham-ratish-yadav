@@ -1,0 +1,1054 @@
+/* =========================================================
+   SKILLS PAGE
+   PRATHAM RATISH YADAV
+========================================================= */
+
+:root {
+    --bg: #080808;
+    --bg-soft: #0d0d0d;
+    --card: #111111;
+    --card-hover: #151515;
+
+    --text: #ffffff;
+    --muted: #9b9b9b;
+    --muted-light: #b9b9b9;
+
+    --accent: #d8b36a;
+
+    --border: rgba(255, 255, 255, 0.10);
+    --accent-border: rgba(216, 179, 106, 0.30);
+
+    --max-width: 1180px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.skills-header {
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5vw;
+
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+    z-index: 20;
+
+    background: rgba(8, 8, 8, 0.92);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* BRAND */
+
+.skills-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    transition: 0.3s ease;
+}
+
+.skills-brand:hover {
+    color: var(--accent);
+}
+
+.skills-brand-image {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.skills-brand-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* BACK BUTTON */
+
+.skills-back {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.skills-back span:first-child {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.skills-back:hover {
+    color: var(--text);
+}
+
+.skills-back:hover span:first-child {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.skills-hero {
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    overflow: hidden;
+}
+
+.skills-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -160px;
+    top: 60px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(216, 179, 106, 0.10),
+        transparent 68%
+    );
+
+    pointer-events: none;
+}
+
+.skills-hero-inner {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 100px 0 90px;
+}
+
+.skills-number {
+    display: inline-block;
+
+    margin-bottom: 42px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.skills-kicker {
+    margin-bottom: 14px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+}
+
+.skills-hero h1 {
+    max-width: 850px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(58px, 8vw, 108px);
+    line-height: 0.96;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 600;
+}
+
+.skills-hero h1 span {
+    color: var(--accent);
+}
+
+.skills-hero-description {
+    max-width: 610px;
+
+    margin-top: 32px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON SECTION LABEL
+========================================================= */
+
+.skills-section-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 30px;
+}
+
+.skills-section-label span {
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.skills-section-label p {
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.skills-intro {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 110px 0;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr;
+    gap: 80px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.skills-intro-content h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+}
+
+.skills-intro-content h2 span {
+    color: var(--accent);
+}
+
+.skills-intro-content p {
+    max-width: 680px;
+
+    margin-top: 28px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.skills-section {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 110px 0;
+}
+
+.skills-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 48px;
+}
+
+.skills-section-heading > div {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.section-number {
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+.skills-section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+}
+
+.skills-section-heading > p {
+    max-width: 340px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   CREATIVE SKILLS GRID
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.skill-card {
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    right: -80px;
+    bottom: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(216, 179, 106, 0.06);
+
+    transition: 0.35s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    background: var(--card-hover);
+
+    border-color: var(--accent-border);
+}
+
+.skill-card:hover::after {
+    transform: scale(1.35);
+}
+
+.skill-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 54px;
+}
+
+.skill-number {
+    color: #666;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.skill-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--accent);
+
+    border: 1px solid var(--accent-border);
+
+    font-size: 17px;
+}
+
+.skill-card h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.skill-card p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 470px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   PERSONAL STRENGTHS
+========================================================= */
+
+.strengths-section {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 0 0 110px;
+}
+
+.strengths-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.strength-item {
+    min-height: 180px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: 0.3s ease;
+}
+
+.strength-item:hover {
+    background: var(--card);
+}
+
+.strength-item span {
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.strength-item h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   TEACHING SECTION
+========================================================= */
+
+.teaching-section {
+    width: 100%;
+
+    background: var(--bg-soft);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.teaching-content {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 110px 0;
+
+    display: grid;
+
+    grid-template-columns: 1.25fr 0.75fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* LEFT */
+
+.teaching-text h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+}
+
+.teaching-text h2 span {
+    color: var(--accent);
+}
+
+.teaching-description {
+    max-width: 620px;
+
+    margin-top: 24px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.teaching-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 34px;
+
+    padding: 14px 18px;
+
+    border: 1px solid var(--border);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.teaching-btn span:last-child {
+    color: var(--accent);
+
+    font-size: 17px;
+
+    transition: transform 0.3s ease;
+}
+
+.teaching-btn:hover {
+    border-color: var(--accent-border);
+
+    background: var(--card);
+}
+
+.teaching-btn:hover span:last-child {
+    transform: translate(3px, -3px);
+}
+
+
+/* RIGHT LOGO COLUMN */
+
+.teaching-logo-column {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.teaching-logo-card {
+    width: min(100%, 390px);
+
+    background: #050505;
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.teaching-logo-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--accent-border);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.teaching-logo-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    overflow: hidden;
+}
+
+.teaching-logo-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+}
+
+.teaching-logo-card:hover .teaching-logo-image img {
+    transform: scale(1.035);
+}
+
+.teaching-logo-caption {
+    padding: 22px 24px 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.teaching-logo-caption span {
+    color: var(--accent);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.teaching-logo-caption h3 {
+    margin-top: 9px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 22px;
+}
+
+.teaching-logo-caption p {
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.skills-cta {
+    padding: 120px 5vw;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.skills-cta-inner {
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+.skills-cta-inner > span {
+    color: var(--accent);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+.skills-cta h2 {
+    margin-top: 18px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+.skills-cta h2 span {
+    color: var(--accent);
+}
+
+.skills-cta p {
+    max-width: 540px;
+
+    margin: 24px auto 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.skills-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 28px;
+
+    margin-top: 34px;
+
+    padding: 15px 20px;
+
+    border: 1px solid var(--border);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.skills-cta-button span:last-child {
+    color: var(--accent);
+
+    font-size: 17px;
+
+    transition: transform 0.3s ease;
+}
+
+.skills-cta-button:hover {
+    background: var(--card);
+
+    border-color: var(--accent-border);
+}
+
+.skills-cta-button:hover span:last-child {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.skills-footer {
+    width: min(var(--max-width), 90%);
+
+    margin: 0 auto;
+
+    padding: 28px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    color: #666;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .skills-intro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .strengths-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .teaching-content {
+        grid-template-columns: 1fr 0.75fr;
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .skills-header {
+        height: 72px;
+
+        padding: 0 6%;
+    }
+
+    .skills-brand {
+        font-size: 11px;
+    }
+
+    .skills-back span:last-child {
+        display: none;
+    }
+
+    .skills-hero {
+        min-height: 500px;
+    }
+
+    .skills-hero-inner {
+        padding: 80px 0;
+    }
+
+    .skills-number {
+        margin-bottom: 32px;
+    }
+
+    .skills-section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .skills-section-heading > p {
+        text-align: left;
+    }
+
+    .teaching-content {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .teaching-logo-column {
+        justify-content: flex-start;
+    }
+
+    .teaching-logo-card {
+        width: min(100%, 420px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .skills-hero h1 {
+        font-size: clamp(48px, 15vw, 76px);
+    }
+
+    .skills-hero-description {
+        font-size: 14px;
+    }
+
+    .skills-intro,
+    .skills-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .strengths-section {
+        padding-bottom: 80px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strength-item {
+        min-height: 150px;
+    }
+
+    .teaching-content {
+        padding: 80px 0;
+    }
+
+    .skills-cta {
+        padding: 90px 6%;
+    }
+
+    .skills-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px 0;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .skills-brand span {
+        font-size: 10px;
+    }
+
+    .skills-brand-image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .skills-hero-inner {
+        padding: 65px 0;
+    }
+
+    .skills-hero h1 {
+        font-size: 46px;
+    }
+
+    .skills-section-heading h2 {
+        font-size: 38px;
+    }
+
+    .strengths-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teaching-text h2 {
+        font-size: 40px;
+    }
+
+    .teaching-logo-card {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
