@@ -4781,3 +4781,1363 @@ body {
     }
 
 }
+/* =========================================================
+   HAMBURGER DISABLED
+========================================================= */
+
+.menu-toggle {
+    display: none !important;
+}
+/* =========================================================
+   FINAL MOBILE HEADER
+   PRATHAM RATISH YADAV
+========================================================= */
+
+
+/* =========================================================
+   REMOVE HAMBURGER / MOBILE MENU
+========================================================= */
+
+.menu-toggle,
+.hamburger,
+.mobile-menu,
+.mobile-menu-btn {
+    display: none !important;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(8, 8, 8, 0.88);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+header nav {
+    width: 100%;
+
+    max-width: var(--max-width);
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    padding: 0 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   PROFILE + NAME
+========================================================= */
+
+header .logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+}
+
+
+header .logo img {
+    width: 35px;
+
+    height: 35px;
+
+    min-width: 35px;
+
+    min-height: 35px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border);
+
+    flex-shrink: 0;
+}
+
+
+header .logo span {
+    display: block;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+header .nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 30px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    flex-shrink: 0;
+}
+
+
+header .nav-links li {
+    margin: 0;
+
+    padding: 0;
+
+    flex: 0 0 auto;
+}
+
+
+header .nav-links a {
+    position: relative;
+
+    display: inline-block;
+
+    color: var(--text-secondary);
+
+    font-size: 0.84rem;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+header .nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: #ffffff;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+header .nav-links a:hover {
+    color: #ffffff;
+}
+
+
+header .nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    header nav {
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+    header .nav-links {
+        gap: 20px;
+    }
+
+    header .nav-links a {
+        font-size: 0.76rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   --------------------------------
+   ROW 1:
+   ● PRATHAM RATISH YADAV
+
+   ROW 2:
+   HOME ABOUT JOURNEY SKILLS
+   PROJECTS GALLERY CONTACT
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        background: rgba(8, 8, 8, 0.96);
+
+        backdrop-filter: blur(24px);
+
+        -webkit-backdrop-filter: blur(24px);
+
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       HEADER NAV CONTAINER
+    ===================================================== */
+
+    header nav {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 0;
+
+        height: auto;
+
+        margin: 0;
+
+        padding: 10px 12px 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 0;
+    }
+
+
+    /* =====================================================
+       FIRST ROW
+       PHOTO + NAME
+    ===================================================== */
+
+    header .logo {
+
+        width: 100%;
+
+        height: 38px;
+
+        min-height: 38px;
+
+        margin: 0;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        flex-shrink: 0;
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.7px;
+
+        white-space: nowrap;
+
+        overflow: visible;
+    }
+
+
+    header .logo img {
+
+        width: 30px;
+
+        height: 30px;
+
+        min-width: 30px;
+
+        min-height: 30px;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        flex-shrink: 0;
+    }
+
+
+    header .logo span {
+
+        display: block;
+
+        width: auto;
+
+        max-width: calc(100vw - 75px);
+
+        margin: 0;
+
+        padding: 0;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       SECOND ROW
+       NAVIGATION
+    ===================================================== */
+
+    header .nav-links {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 35px;
+
+        min-height: 35px;
+
+        margin: 5px 0 0;
+
+        padding: 0 2px 8px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 20px;
+
+        list-style: none;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        scrollbar-width: none;
+
+        -ms-overflow-style: none;
+
+        -webkit-overflow-scrolling: touch;
+
+        flex-shrink: 0;
+    }
+
+
+    /* Hide scrollbar */
+
+    header .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* =====================================================
+       NAV ITEMS
+    ===================================================== */
+
+    header .nav-links li {
+
+        display: block;
+
+        width: auto;
+
+        min-width: max-content;
+
+        margin: 0;
+
+        padding: 0;
+
+        flex: 0 0 auto;
+    }
+
+
+    header .nav-links a {
+
+        display: inline-block;
+
+        width: auto;
+
+        height: auto;
+
+        min-height: 0;
+
+        margin: 0;
+
+        padding: 0;
+
+        color: var(--text-secondary);
+
+        font-size: 0.64rem;
+
+        font-weight: 500;
+
+        line-height: 1;
+
+        letter-spacing: 0.02em;
+
+        white-space: nowrap;
+
+        transition:
+            color 0.25s ease;
+    }
+
+
+    /* Remove underline on mobile */
+
+    header .nav-links a::after {
+        display: none;
+    }
+
+
+    header .nav-links a:hover {
+        color: #ffffff;
+    }
+
+
+    /* =====================================================
+       CONTENT BELOW FIXED HEADER
+    ===================================================== */
+
+    main {
+        padding-top: 78px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    header nav {
+        padding: 9px 10px 0;
+    }
+
+
+    header .logo {
+
+        height: 36px;
+
+        min-height: 36px;
+
+        gap: 7px;
+
+        font-size: 0.67rem;
+
+        letter-spacing: 0.55px;
+    }
+
+
+    header .logo img {
+
+        width: 28px;
+
+        height: 28px;
+
+        min-width: 28px;
+
+        min-height: 28px;
+    }
+
+
+    header .logo span {
+
+        max-width: calc(100vw - 70px);
+    }
+
+
+    header .nav-links {
+
+        height: 34px;
+
+        min-height: 34px;
+
+        margin-top: 4px;
+
+        gap: 17px;
+
+        padding-bottom: 7px;
+    }
+
+
+    header .nav-links a {
+        font-size: 0.61rem;
+    }
+
+
+    main {
+        padding-top: 74px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    header nav {
+        padding: 8px 9px 0;
+    }
+
+
+    header .logo {
+
+        height: 34px;
+
+        min-height: 34px;
+
+        gap: 6px;
+
+        font-size: 0.61rem;
+
+        letter-spacing: 0.4px;
+    }
+
+
+    header .logo img {
+
+        width: 27px;
+
+        height: 27px;
+
+        min-width: 27px;
+
+        min-height: 27px;
+    }
+
+
+    header .logo span {
+
+        max-width: calc(100vw - 65px);
+    }
+
+
+    header .nav-links {
+
+        height: 33px;
+
+        min-height: 33px;
+
+        gap: 15px;
+
+        padding-bottom: 7px;
+    }
+
+
+    header .nav-links a {
+        font-size: 0.58rem;
+    }
+
+
+    main {
+        padding-top: 70px !important;
+    }
+}
+
+
+/* =========================================================
+   NO HORIZONTAL PAGE SCROLL
+   ONLY NAVIGATION CAN SCROLL
+========================================================= */
+
+html,
+body {
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MOBILE NAV SCROLL BEHAVIOUR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header .nav-links {
+        touch-action: pan-x;
+
+        overscroll-behavior-x: contain;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    header,
+    header .nav-links a,
+    header .nav-links a::after {
+        transition: none !important;
+    }
+}
+/* =========================================================
+   FINAL MOBILE HEADER — FULL NAME FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    header {
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+
+    /* NAV CONTAINER */
+
+    header nav {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 10px 8px 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 0 !important;
+    }
+
+
+    /* =====================================================
+       PHOTO + FULL NAME
+    ===================================================== */
+
+    header .logo {
+
+        width: 100% !important;
+
+        height: 40px !important;
+        min-height: 40px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 0.72rem !important;
+
+        letter-spacing: 0.45px !important;
+
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        max-width: none !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* PROFILE PHOTO */
+
+    header .logo img {
+
+        width: 30px !important;
+        height: 30px !important;
+
+        min-width: 30px !important;
+        min-height: 30px !important;
+
+        max-width: 30px !important;
+        max-height: 30px !important;
+
+        flex-shrink: 0 !important;
+
+        border-radius: 50% !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* FULL NAME */
+
+    header .logo span {
+
+        display: block !important;
+
+        width: auto !important;
+
+        max-width: none !important;
+
+        min-width: max-content !important;
+
+        overflow: visible !important;
+
+        text-overflow: clip !important;
+
+        white-space: nowrap !important;
+
+        flex-shrink: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* =====================================================
+       NAVIGATION ROW
+    ===================================================== */
+
+    header .nav-links {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        height: 36px !important;
+        min-height: 36px !important;
+
+        margin: 5px 0 0 !important;
+
+        padding: 0 2px 8px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        gap: 20px !important;
+
+        overflow-x: auto !important;
+
+        overflow-y: hidden !important;
+
+        white-space: nowrap !important;
+
+        scrollbar-width: none !important;
+
+        -ms-overflow-style: none !important;
+
+        -webkit-overflow-scrolling: touch !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    header .nav-links::-webkit-scrollbar {
+        display: none !important;
+    }
+
+
+    /* NAV ITEMS */
+
+    header .nav-links li {
+
+        width: auto !important;
+
+        min-width: max-content !important;
+
+        flex: 0 0 auto !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    header .nav-links a {
+
+        display: inline-block !important;
+
+        width: auto !important;
+
+        min-width: max-content !important;
+
+        height: auto !important;
+
+        min-height: 0 !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+
+        color: var(--text-secondary) !important;
+
+        font-size: 0.64rem !important;
+
+        font-weight: 500 !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: 0.02em !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    header .nav-links a::after {
+        display: none !important;
+    }
+
+
+    /* CONTENT BELOW HEADER */
+
+    main {
+        padding-top: 81px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    header nav {
+        padding: 9px 5px 0 !important;
+    }
+
+
+    header .logo {
+
+        height: 37px !important;
+        min-height: 37px !important;
+
+        gap: 7px !important;
+
+        font-size: 0.66rem !important;
+
+        letter-spacing: 0.35px !important;
+    }
+
+
+    header .logo img {
+
+        width: 28px !important;
+        height: 28px !important;
+
+        min-width: 28px !important;
+        min-height: 28px !important;
+
+        max-width: 28px !important;
+        max-height: 28px !important;
+    }
+
+
+    header .nav-links {
+
+        height: 35px !important;
+        min-height: 35px !important;
+
+        margin-top: 4px !important;
+
+        gap: 17px !important;
+
+        padding-bottom: 7px !important;
+    }
+
+
+    header .nav-links a {
+        font-size: 0.60rem !important;
+    }
+
+
+    main {
+        padding-top: 76px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    header nav {
+        padding: 8px 3px 0 !important;
+    }
+
+
+    header .logo {
+
+        height: 35px !important;
+        min-height: 35px !important;
+
+        gap: 6px !important;
+
+        font-size: 0.59rem !important;
+
+        letter-spacing: 0.25px !important;
+    }
+
+
+    header .logo img {
+
+        width: 26px !important;
+        height: 26px !important;
+
+        min-width: 26px !important;
+        min-height: 26px !important;
+
+        max-width: 26px !important;
+        max-height: 26px !important;
+    }
+
+
+    header .nav-links {
+
+        height: 34px !important;
+        min-height: 34px !important;
+
+        gap: 15px !important;
+    }
+
+
+    header .nav-links a {
+        font-size: 0.57rem !important;
+    }
+
+
+    main {
+        padding-top: 73px !important;
+    }
+}
+/* =========================================================
+   PREMIUM MOBILE HEADER
+   NAME + NAVIGATION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+
+        background: rgba(8, 8, 8, 0.94) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.28) !important;
+
+        z-index: 9999 !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* NAV CONTAINER */
+
+    header nav {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        padding: 10px 0 0 !important;
+
+        gap: 0 !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =====================================================
+       PROFILE / NAME
+    ===================================================== */
+
+    header .logo {
+
+        display: flex !important;
+
+        width: max-content !important;
+        max-width: none !important;
+        min-width: max-content !important;
+
+        height: 36px !important;
+        min-height: 36px !important;
+
+        flex: 0 0 auto !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 9px !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        color: #ffffff !important;
+
+        font-size: 0.70rem !important;
+        font-weight: 600 !important;
+
+        letter-spacing: 0.7px !important;
+    }
+
+
+    /* PROFILE PHOTO */
+
+    header .logo img {
+
+        width: 30px !important;
+        height: 30px !important;
+
+        min-width: 30px !important;
+        min-height: 30px !important;
+
+        max-width: 30px !important;
+        max-height: 30px !important;
+
+        flex: 0 0 30px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 50% !important;
+
+        border: 1px solid rgba(216, 179, 106, 0.65) !important;
+
+        box-shadow:
+            0 0 0 3px rgba(216, 179, 106, 0.06),
+            0 4px 14px rgba(0, 0, 0, 0.35) !important;
+    }
+
+
+    /* NAME */
+
+    header .logo span {
+
+        display: block !important;
+
+        width: max-content !important;
+        max-width: none !important;
+        min-width: max-content !important;
+
+        flex: 0 0 auto !important;
+
+        overflow: visible !important;
+
+        text-overflow: clip !important;
+
+        white-space: nowrap !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        color: #ffffff !important;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    header .nav-links {
+
+        position: static !important;
+
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 40px !important;
+        min-height: 40px !important;
+
+        margin: 4px 0 0 !important;
+
+        padding: 0 18px 8px !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        gap: 24px !important;
+
+        list-style: none !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: none !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        white-space: nowrap !important;
+
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+
+        -webkit-overflow-scrolling: touch !important;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.045) !important;
+    }
+
+
+    header .nav-links::-webkit-scrollbar {
+        display: none !important;
+    }
+
+
+    /* NAV ITEMS */
+
+    header .nav-links li {
+
+        display: block !important;
+
+        width: max-content !important;
+        min-width: max-content !important;
+
+        flex: 0 0 auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* NAV LINKS */
+
+    header .nav-links a {
+
+        position: relative !important;
+
+        display: inline-flex !important;
+
+        width: max-content !important;
+        min-width: max-content !important;
+
+        align-items: center !important;
+
+        padding: 8px 0 5px !important;
+        margin: 0 !important;
+
+        color: rgba(255, 255, 255, 0.56) !important;
+
+        font-size: 0.68rem !important;
+
+        font-weight: 500 !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: 0.08em !important;
+
+        white-space: nowrap !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transition:
+            color 0.3s ease,
+            opacity 0.3s ease !important;
+    }
+
+
+    /* ACTIVE / HOVER */
+
+    header .nav-links a:hover,
+    header .nav-links a.active {
+
+        color: #ffffff !important;
+    }
+
+
+    /* GOLD ACTIVE LINE */
+
+    header .nav-links a::after {
+
+        content: "" !important;
+
+        position: absolute !important;
+
+        left: 0 !important;
+        bottom: 0 !important;
+
+        width: 100% !important;
+        height: 1px !important;
+
+        background: var(--accent) !important;
+
+        transform: scaleX(0) !important;
+        transform-origin: center !important;
+
+        transition: transform 0.3s ease !important;
+    }
+
+
+    header .nav-links a:hover::after,
+    header .nav-links a.active::after {
+
+        transform: scaleX(1) !important;
+    }
+
+
+    /* PAGE CONTENT */
+
+    main {
+        padding-top: 82px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    header nav {
+        padding-top: 8px !important;
+    }
+
+    header .logo {
+
+        height: 34px !important;
+        min-height: 34px !important;
+
+        gap: 8px !important;
+
+        font-size: 0.64rem !important;
+
+        letter-spacing: 0.55px !important;
+    }
+
+    header .logo img {
+
+        width: 28px !important;
+        height: 28px !important;
+
+        min-width: 28px !important;
+        min-height: 28px !important;
+
+        max-width: 28px !important;
+        max-height: 28px !important;
+
+        flex-basis: 28px !important;
+    }
+
+    header .nav-links {
+
+        height: 39px !important;
+        min-height: 39px !important;
+
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+
+        gap: 21px !important;
+    }
+
+    header .nav-links a {
+        font-size: 0.64rem !important;
+    }
+
+    main {
+        padding-top: 78px !important;
+    }
+}
