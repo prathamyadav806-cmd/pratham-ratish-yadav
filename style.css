@@ -4231,3 +4231,553 @@ header.scrolled {
         width: 180px !important;
     }
 }
+/* =========================================================
+   HEADER — EXACT RESPONSIVE VERSION
+   Desktop  : Logo + Navigation in one row
+   Mobile   : Logo row + Navigation directly underneath
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP HEADER
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(8, 8, 8, 0.82);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+header nav {
+    width: 100%;
+    max-width: var(--max-width);
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    padding: 0 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+header .logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    white-space: nowrap;
+}
+
+
+header .logo img {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border);
+
+    flex-shrink: 0;
+}
+
+
+header .logo span {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+header .nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    flex-shrink: 0;
+}
+
+
+header .nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+
+header .nav-links a {
+    position: relative;
+
+    display: inline-block;
+
+    color: var(--text-secondary);
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+header .nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: #ffffff;
+
+    transition:
+        width 0.35s ease;
+}
+
+
+header .nav-links a:hover {
+    color: #ffffff;
+}
+
+
+header .nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    header nav {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    header .nav-links {
+        gap: 20px;
+    }
+
+    header .nav-links a {
+        font-size: 0.78rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   Logo row
+   Navigation directly underneath
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        background: rgba(8, 8, 8, 0.94);
+
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+    }
+
+
+    header nav {
+
+        min-height: auto;
+
+        padding: 12px 18px 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       PROFILE + NAME
+    ----------------------------------------------------- */
+
+    header .logo {
+
+        width: 100%;
+
+        min-height: 42px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 9px;
+
+        font-size: 0.76rem;
+
+        letter-spacing: 0.9px;
+
+        white-space: nowrap;
+    }
+
+
+    header .logo img {
+
+        width: 32px;
+        height: 32px;
+
+        flex-shrink: 0;
+    }
+
+
+    header .logo span {
+
+        display: block;
+
+        max-width: calc(100vw - 85px);
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       NAVIGATION ROW
+    ----------------------------------------------------- */
+
+    header .nav-links {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 8px;
+
+        padding: 0 0 11px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 22px;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        list-style: none;
+
+        scrollbar-width: none;
+
+        -ms-overflow-style: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    header .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    header .nav-links li {
+
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+    }
+
+
+    header .nav-links a {
+
+        display: block;
+
+        padding: 2px 0;
+
+        color: var(--text-secondary);
+
+        font-size: 0.68rem;
+
+        font-weight: 500;
+
+        letter-spacing: 0.02em;
+
+        white-space: nowrap;
+    }
+
+
+    header .nav-links a::after {
+
+        display: none;
+    }
+
+
+    header .nav-links a:hover {
+
+        color: #ffffff;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    header nav {
+
+        padding:
+            10px 14px 0;
+    }
+
+
+    header .logo {
+
+        min-height: 40px;
+
+        gap: 8px;
+
+        font-size: 0.69rem;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    header .logo img {
+
+        width: 30px;
+        height: 30px;
+    }
+
+
+    header .logo span {
+
+        max-width: calc(100vw - 75px);
+    }
+
+
+    header .nav-links {
+
+        margin-top: 7px;
+
+        padding-bottom: 10px;
+
+        gap: 18px;
+    }
+
+
+    header .nav-links a {
+
+        font-size: 0.64rem;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    header nav {
+
+        padding:
+            9px 12px 0;
+    }
+
+
+    header .logo {
+
+        gap: 7px;
+
+        font-size: 0.63rem;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    header .logo img {
+
+        width: 28px;
+        height: 28px;
+    }
+
+
+    header .logo span {
+
+        max-width: calc(100vw - 68px);
+    }
+
+
+    header .nav-links {
+
+        gap: 16px;
+
+        padding-bottom: 9px;
+    }
+
+
+    header .nav-links a {
+
+        font-size: 0.60rem;
+    }
+
+}
+
+
+/* =========================================================
+   NO HORIZONTAL PAGE SCROLL
+   Only the navigation itself can scroll horizontally.
+========================================================= */
+
+html,
+body {
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    header,
+    header .nav-links a,
+    header .nav-links a::after {
+
+        transition: none !important;
+    }
+
+}
+/* =========================================================
+   MOBILE HEADER → SECTION SPACING FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Header now has TWO rows */
+    header nav {
+        min-height: 112px;
+    }
+
+    /* Keep first section safely below fixed header */
+    main {
+        padding-top: 112px;
+    }
+
+    /* Hero already has its own spacing,
+       so prevent excessive double spacing */
+    .hero {
+        min-height: calc(100vh - 112px);
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    header nav {
+        min-height: 106px;
+    }
+
+    main {
+        padding-top: 106px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 106px);
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    header nav {
+        min-height: 100px;
+    }
+
+    main {
+        padding-top: 100px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 100px);
+    }
+
+}
